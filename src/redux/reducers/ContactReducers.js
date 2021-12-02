@@ -24,6 +24,10 @@ const contactReducer = (state = initialState, action) => {
         ...state,
         contacts: newContact,
       };
+    case "CLEAR_ALL":
+      return {
+        contacts: [],
+      };
     case "UPDATE_CONTACT":
       const updatedState = state.contacts.map((contact) =>
         contact.id === action.payload.id ? action.payload : contact,

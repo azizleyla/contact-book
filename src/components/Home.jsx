@@ -12,6 +12,10 @@ const Home = () => {
     dispatch({ type: "DELETE_CONTACT", payload: id });
     toast.success("Student deleted successully");
   };
+  const clearAllStudents = () => {
+    dispatch({ type: "CLEAR_ALL" });
+    toast.success("All students removed");
+  };
 
   return (
     <div className="container">
@@ -20,7 +24,16 @@ const Home = () => {
           <Link to="/add" className="btn btn-outline-dark my-5 ml-auto">
             Add Contact
           </Link>
+          <div className="col-md-12 d-flex justify-content-end">
+            <button
+              onClick={clearAllStudents}
+              className="btn btn-success btn-block ml-auto "
+            >
+              Clear All
+            </button>
+          </div>
         </div>
+
         <div className="col-md-10 mx-auto">
           <table className="table table-hover">
             <thead className="text-white bg-dark text-center">
